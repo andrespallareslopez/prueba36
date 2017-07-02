@@ -1,0 +1,6 @@
+.vs
+packages
+prueba36web/bin
+prueba36web/obj
+.tfignore
+prueba36web.vssscc

@@ -1,0 +1,90 @@
+﻿Apuntes
+--------
+
+Tutorial sobre Asp.net MVC 5
+
+Tutorial completo desde cero paso a paso con las imagenes de visual studio 2015 en el paso a paso
+
+http://kristianguevara.net/creating-your-asp-net-mvc-5-application-from-scratch-for-beginners-using-entity-framework-6-and-identity-with-crud-functionalities/
+
+----------------------------------------------------------------------------
+
+Tutorial sobre Asp.Net Identity desde lo basico sin usar owin en los primeros apartados,  hasta usar owin y un login y registro de usuario utilizando owin
+
+Instalacion de los siguiente paquetes:
+
+Install-Package Microsoft.Owin
+Install-Package Microsoft.Owin.Host.systemWeb
+Install-Package Microsoft.Owin.Security.Cookies
+Install-Package Microsoft.Owin.Security.OAuth
+Install-Package EntityFramework
+Install-Package Microsoft.AspNet.Identity.Core
+Install-Package Microsoft.AspNet.Identity.EntityFramework
+
+
+https://www.tektutorialshub.com/asp-net-identity-tutorial-user-login-and-registration/
+
+Es un tutorial con 4 secciones sobre asp.net Identity
+
+En este ejemplo no utiliza metodos asyncronos, he tenido que adaptar el codigo de pruebas.
+
+-----------------------------------------------------------------------------
+
+ASP.NET MVC and Identity 2.0: Understanding the Basics
+
+Otro tutorial sobre Asp.net Identity pero mucho mas completo, son varios tutoriales enlazados entre si
+con bastante detalle y mas complejo sobre Identity.
+
+http://johnatten.com/2014/04/20/asp-net-mvc-and-identity-2-0-understanding-the-basics/#The-New-ApplicationUser-Class-in-Identity-2-0
+
+------------------------------------------------------------------------------
+OWIN y Katana (IV): Startup y Configuration
+
+http://www.variablenotfound.com/2013/10/owin-y-katana-iv-startup-y-configuration.html
+
+
+En este articulo tenemos un codigo bastante interesante de como hacer una configuracion del startup
+y parametrizarla para produccion o desarrollo
+
+<appSettings>
+   ...
+   <add key="owin:appStartup" value="Staging" />
+</appSettings>
+
+
+[assembly: OwinStartup("Staging", typeof(StagingStartup))]
+[assembly: OwinStartup("Production", typeof(ProductionStartup))]
+namespace OwinStartupDemo
+{
+    public class StagingStartup: ProductionStartup
+    {
+        public override void Configuration(IAppBuilder app)
+        {
+            // Include modules for heavy tracing/logging, error pages, etc.
+            base.Configuration(app);
+        }
+    }
+    public class ProductionStartup
+    {
+        public virtual void Configuration(IAppBuilder app)
+        {
+            // App's initializacion code
+        }
+    }
+}
+-------------------------------------------------------------------------------
+
+Tutorial Asp.net MVC 4
+
+Tutorial basico que trata sobre formularios, tablas, validacion, muy sencillo con la sintaxis razor necesaria
+
+https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-edit-methods-and-edit-view
+
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Bloqueo exclusivo (check out) de archivos en TFS Online
+
+https://jherax.wordpress.com/2014/08/11/tfs-bloqueo-exclusivo-de-archivos/
+
+-------------------------------------------------------------------------------------------
